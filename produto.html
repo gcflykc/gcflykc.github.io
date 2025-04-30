@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Como Funciona | FLYKc</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLYKc CAPS | Produto</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: #0e0e0e;
-      color: #fff;
+      background-color: #0c0c0c;
+      color: #f1f1f1;
       margin: 0;
-      padding: 0;
     }
 
     header {
@@ -27,42 +26,75 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 60px 20px;
-      line-height: 1.8;
     }
 
-    h2 {
+    .product-title {
+      font-size: 2.8em;
       color: #a020f0;
-      font-size: 2.5em;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    p {
-      font-size: 1.1em;
+    .subtitle {
+      font-size: 1.3em;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .product-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .product-image {
+      flex: 1;
+    }
+
+    .product-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      border: 2px solid #a020f0;
+    }
+
+    .product-details {
+      flex: 2;
+    }
+
+    .product-details h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .product-details ul {
+      list-style: disc;
+      padding-left: 20px;
       color: #ccc;
     }
 
-    .highlight {
-      color: #fff;
+    .btn-buy {
+      display: inline-block;
+      margin-top: 30px;
       background: #a020f0;
-      padding: 4px 8px;
-      border-radius: 5px;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s ease;
     }
 
-    ul {
-      margin-top: 20px;
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
+    .btn-buy:hover {
+      background: #7e1bbf;
     }
 
     a.back-btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 50px;
       color: #a020f0;
       text-decoration: none;
       border: 1px solid #a020f0;
@@ -84,31 +116,33 @@
 </header>
 
 <div class="container">
-  <h2>Como Funciona o FLYKc CAPS</h2>
+  <h2 class="product-title">FLYKc CAPS</h2>
+  <p class="subtitle">Alta performance em cápsulas — Energia, foco e clareza mental.</p>
 
-  <p>
-    O <span class="highlight">FLYKc CAPS</span> é um suplemento inteligente desenvolvido para promover
-    <strong>energia estável, foco mental e performance cognitiva</strong> — ideal para gamers, atletas, estudantes e profissionais.
-  </p>
+  <div class="product-info">
+    <div class="product-image">
+      <img src="https://via.placeholder.com/400x500/000000/a020f0?text=FLYKc+CAPS" alt="FLYKc Produto">
+    </div>
 
-  <h3>Ingredientes-chave:</h3>
-  <ul>
-    <li><strong>Cafeína:</strong> estimula o sistema nervoso central, aumentando o estado de alerta e a energia.</li>
-    <li><strong>L-Teanina:</strong> aminoácido que suaviza os efeitos da cafeína, reduzindo a ansiedade e melhorando o foco.</li>
-    <li><strong>Vitaminas B:</strong> apoiam o metabolismo energético e a função cerebral.</li>
-  </ul>
+    <div class="product-details">
+      <h3>Benefícios:</h3>
+      <ul>
+        <li>Mais energia e disposição em minutos</li>
+        <li>Foco intenso e clareza mental sem agitação</li>
+        <li>Zero açúcar e sem crash no final do efeito</li>
+        <li>Ideal para gamers, atletas e produtividade</li>
+      </ul>
 
-  <h3>Como ele age no corpo:</h3>
-  <ul>
-    <li><strong>15 a 30 minutos:</strong> você sente mais foco e disposição.</li>
-    <li><strong>1 a 2 horas:</strong> o pico de energia e concentração se mantém estável sem agitação.</li>
-    <li><strong>Após 4 a 6 horas:</strong> a energia vai diminuindo de forma gradual, sem queda brusca.</li>
-  </ul>
+      <h3>Composição:</h3>
+      <ul>
+        <li>Cafeína Anidra 200mg</li>
+        <li>L-Teanina 100mg</li>
+        <li>Vitaminas B6, B12 e Niacina</li>
+      </ul>
 
-  <h3>Por que é diferente?</h3>
-  <p>
-    A combinação de cafeína com L-teanina cria uma sinergia que entrega <span class="highlight">energia limpa</span>, com <strong>clareza mental e zero rebote</strong>.
-  </p>
+      <a href="https://api.whatsapp.com/send?phone=55SEUNUMERO&text=Quero+comprar+FLYKc+CAPS!" class="btn-buy" target="_blank">Comprar Agora</a>
+    </div>
+  </div>
 
   <a class="back-btn" href="index.html">Voltar para o Início</a>
 </div>
