@@ -55,67 +55,7 @@
       }
     }
 
-    #flykc-logo text {
-      animation: draw 2s ease-out forwards;
-    }
-
-    @keyframes draw {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .page-transition {
-      animation: fadeOut 0.4s ease forwards;
-    }
-
-    header {
-      background-color: #111;
-      padding: 20px 40px;
-      border-bottom: 2px solid #a020f0;
-    }
-
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      color: #a020f0;
-      font-size: 26px;
-    }
-
-    .main {
-      padding: 100px 20px;
-    }
-
-    h2 {
-      font-family: 'Courier New', monospace;
-      font-size: 2.5em;
-      color: #a020f0;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.2em;
-      color: #ccc;
-      margin-bottom: 40px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
+    /* Estilos dos botões */
     a.btn-primary, a.btn-secondary {
       padding: 14px 32px;
       border-radius: 30px;
@@ -172,6 +112,44 @@
       transform: scale(1.05);
     }
 
+    /* Estilos do cabeçalho */
+    header {
+      background-color: #111;
+      padding: 20px 40px;
+      border-bottom: 2px solid #a020f0;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #a020f0;
+      font-size: 26px;
+    }
+
+    /* Estilos principais da página */
+    .main {
+      padding: 100px 20px;
+    }
+
+    h2 {
+      font-family: 'Courier New', monospace;
+      font-size: 2.5em;
+      color: #a020f0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
     footer {
       margin-top: 100px;
       padding: 30px 0;
@@ -179,6 +157,7 @@
       color: #777;
       font-size: 0.9em;
     }
+
   </style>
 </head>
 <body>
@@ -189,25 +168,25 @@
   </svg>
 </div>
 
-<header class="fade-in">
+<header>
   <h1>FLYKc</h1>
 </header>
 
-<div class="main fade-in">
+<div class="main">
   <h2>Suplemento Inteligente</h2>
   <p>Desperte sua melhor versão com foco, energia e performance sob medida.</p>
 
   <div class="buttons">
-    <a href="produto.html" class="btn-primary transition-link">EXPERIMENTE</a>
-    <a href="como-funciona.html" class="btn-primary transition-link">VEJA COMO FUNCIONA</a>
+    <a href="produto.html" class="btn-primary">EXPERIMENTE</a>
+    <a href="como-funciona.html" class="btn-primary">VEJA COMO FUNCIONA</a>
   </div>
 
   <div style="margin-top: 40px;">
-    <a href="personalize.html" class="btn-secondary transition-link">Garanta com suas necessidades</a>
+    <a href="personalize.html" class="btn-secondary">Garanta com suas necessidades</a>
   </div>
 </div>
 
-<footer class="fade-in">
+<footer>
   © 2025 FLYKc. Todos os direitos reservados.
 </footer>
 
@@ -215,30 +194,6 @@
   window.addEventListener('load', () => {
     document.getElementById('preloader').classList.add('fade-out');
     document.body.classList.add('loaded');
-  });
-
-  const fadeIns = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  fadeIns.forEach(el => observer.observe(el));
-
-  const links = document.querySelectorAll('a.transition-link');
-  links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.body.classList.add('page-transition');
-      const href = this.getAttribute('href');
-      setTimeout(() => {
-        window.location.href = href;
-      }, 400);
-    });
   });
 </script>
 
