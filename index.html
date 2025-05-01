@@ -32,12 +32,22 @@
       align-items: center;
       justify-content: center;
       z-index: 9999;
-      transition: opacity 0.5s ease;
+      transition: opacity 1s ease-in-out;
     }
 
     #preloader svg {
       width: 220px;
       height: 60px;
+      animation: logo-draw 3s forwards; /* Animação de desenho da logo */
+    }
+
+    @keyframes logo-draw {
+      0% {
+        stroke-dashoffset: 500;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
     }
 
     body.loaded {
@@ -45,14 +55,8 @@
     }
 
     #preloader.fade-out {
-      animation: fadeOut 0.5s forwards;
-    }
-
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
-      }
+      opacity: 0;
+      visibility: hidden;
     }
 
     /* Estilos dos botões */
@@ -62,12 +66,14 @@
       text-decoration: none;
       font-weight: bold;
       font-family: 'Courier New', monospace;
-      transition: all 0.3s ease;
+      transition: all 0.3s ease-in-out;
       position: relative;
       overflow: hidden;
       z-index: 1;
       cursor: pointer;
       letter-spacing: 1px;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
     }
 
     a.btn-primary {
@@ -110,6 +116,18 @@
       color: #fff;
       box-shadow: 0 0 25px rgba(160, 32, 240, 0.6);
       transform: scale(1.05);
+    }
+
+    /* Animação de FadeIn para os botões */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Estilos do cabeçalho */
@@ -192,8 +210,10 @@
 
 <script>
   window.addEventListener('load', () => {
-    document.getElementById('preloader').classList.add('fade-out');
-    document.body.classList.add('loaded');
+    setTimeout(() => {
+      document.getElementById('preloader').classList.add('fade-out');
+      document.body.classList.add('loaded');
+    }, 500); // Delay de 0.5s para dar tempo ao preloader de aparecer
   });
 </script>
 
