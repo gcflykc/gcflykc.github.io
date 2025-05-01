@@ -90,7 +90,29 @@
 <body>
 
 <header>
-  <h1>FLYKc</h1>
+
+<svg id="flykc-logo" width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <text x="0" y="45" font-family="Orbitron, sans-serif" font-size="40" fill="#a020f0">
+    FLYKc
+  </text>
+  <style>
+    #flykc-logo text {
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.6;
+        transform: scale(1.08);
+      }
+    }
+  </style>
+</svg>
+  
 </header>
 
 <div class="main">
