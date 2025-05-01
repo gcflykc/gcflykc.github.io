@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+p<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -91,27 +91,34 @@
 
 <header>
 
-<svg id="flykc-logo" width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-  <text x="0" y="45" font-family="Orbitron, sans-serif" font-size="40" fill="#a020f0">
-    FLYKc
-  </text>
-  <style>
-    #flykc-logo text {
-      animation: pulse 1.5s infinite ease-in-out;
-    }
+<div id="preloader">
+  <div style="width: 220px;">
+    <!-- SVG animado de traçado -->
+    <svg id="flykc-logo" width="100%" height="60" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="45"
+            font-family="Orbitron, sans-serif"
+            font-size="40"
+            fill="none"
+            stroke="#a020f0"
+            stroke-width="2"
+            stroke-dasharray="500"
+            stroke-dashoffset="500">
+        FLYKc
+      </text>
+      <style>
+        #flykc-logo text {
+          animation: draw 2s ease-out forwards;
+        }
 
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.6;
-        transform: scale(1.08);
-      }
-    }
-  </style>
-</svg>
+        @keyframes draw {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+      </style>
+    </svg>
+  </div>
+</div>
   
 </header>
 
