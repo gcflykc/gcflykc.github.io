@@ -4,149 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FLYKc - Energia Inteligente</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      background: #141414;
-      padding: 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #00ffd5;
-    }
-
-    .logo {
-      font-size: 2.5em;
-      font-weight: bold;
-      color: #00ffd5;
-      text-shadow: 0 0 5px #00ffd5, 0 0 15px #00ffd5;
-      animation: pulse 2.5s infinite ease-in-out;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #00ffd5;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px #00ffd5;
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      animation: fadeIn 1s ease-out;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #00ffd5, #00bfa5);
-      color: #000;
-      text-align: center;
-      border-radius: 12px;
-      padding: 100px 20px;
-      margin: 40px 0;
-    }
-
-    .btn {
-      background: #000;
-      color: #00ffd5;
-      padding: 15px 30px;
-      margin-top: 20px;
-      display: inline-block;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #00ffd5;
-    }
-
-    footer {
-      background: #141414;
-      padding: 30px;
-      text-align: center;
-      border-top: 1px solid #00ffd5;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pulse {
-      0%, 100% { text-shadow: 0 0 5px #00ffd5, 0 0 15px #00ffd5; transform: scale(1); }
-      50% { text-shadow: 0 0 15px #00ffd5, 0 0 30px #00ffd5; transform: scale(1.05); }
-    }
-
-    @media (max-width: 600px) {
-      .logo { font-size: 2em; }
-      nav a { display: inline-block; margin: 10px 5px; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header>
     <div class="logo">FLYKc</div>
     <nav>
-      <a href="#inicio">Início</a>
-      <a href="#produto">Produto</a>
-      <a href="#como-funciona">Como Funciona</a>
-      <a href="#personalize">Personalize</a>
-      <a href="#contato">Contato</a>
+      <a href="index.html" class="active">Início</a>
+      <a href="produto.html">Produto</a>
+      <a href="como-funciona.html">Como Funciona</a>
+      <a href="personalize.html">Personalize</a>
+      <a href="contato.html">Contato</a>
     </nav>
   </header>
 
-  <section class="hero" id="inicio">
-    <h1>Alta Performance, Personalizada</h1>
+  <section class="hero">
+    <h1>Alta Performance, <span class="typing-effect"></span></h1>
     <p>Suplementos inteligentes para energia, foco e resultados reais.</p>
-    <a href="#personalize" class="btn">Garanta o seu</a>
+    <button class="btn open-personalize-modal">Garanta o seu</button>
   </section>
 
-  <section id="produto">
-    <h2>Nosso Produto</h2>
-    <p>O suplemento FLYKc é uma cápsula de energia inteligente, com cafeína, L-teanina, vitaminas do complexo B e compostos naturais. Sem açúcar, vegano e aprovado pela ANVISA.</p>
+  <section class="features">
+    <div class="feature-card">
+      <h3>Energia Sustentável</h3>
+      <p>Sem picos de energia ou queda brusca</p>
+    </div>
+    <div class="feature-card">
+      <h3>Foco Intenso</h3>
+      <p>Concentração sem nervosismo</p>
+    </div>
+    <div class="feature-card">
+      <h3>Personalização</h3>
+      <p>Sua fórmula exclusiva</p>
+    </div>
   </section>
 
-  <section id="como-funciona">
-    <h2>Como Funciona</h2>
-    <ol>
-      <li>Você escolhe seus objetivos e preferências</li>
-      <li>Nós formulamos sua combinação ideal</li>
-      <li>Você sente o resultado no dia a dia</li>
-    </ol>
-  </section>
+  <!-- Modal de Personalização -->
+  <div id="personalizeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Personalize Seu FLYKc</h2>
+      <form id="personalizeForm">
+        <div class="form-group">
+          <label for="goal">Seu principal objetivo:</label>
+          <select id="goal" required>
+            <option value="">Selecione...</option>
+            <option value="energy">Energia e Disposição</option>
+            <option value="focus">Foco Mental</option>
+            <option value="recovery">Recuperação Muscular</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Intensidade:</label>
+          <div class="intensity-options">
+            <label><input type="radio" name="intensity" value="light" checked> Leve</label>
+            <label><input type="radio" name="intensity" value="medium"> Médio</label>
+            <label><input type="radio" name="intensity" value="strong"> Forte</label>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn">Finalizar</button>
+      </form>
+    </div>
+  </div>
 
-  <section id="personalize">
-    <h2>Personalize Seu Suplemento</h2>
-    <p>Quer foco, energia ou recuperação? Monte sua fórmula perfeita agora mesmo.</p>
-    <a href="#contato" class="btn">Fale com a gente</a>
-  </section>
-
-  <footer id="contato">
-    <p>Contato: contato@flykc.com.br</p>
+  <footer>
+    <button class="btn open-contact-modal">Fale Conosco</button>
     <p>FLYKc © 2025</p>
   </footer>
 
+  <!-- Modal de Contato -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contato FLYKc</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem:</label>
+          <textarea id="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
