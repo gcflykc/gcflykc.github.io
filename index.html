@@ -1,221 +1,152 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FLYKc | Energia e Foco Inteligente</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <title>FLYKc - Energia Inteligente</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      overflow: hidden;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-      color: white;
-      text-align: center;
-    }
-
-    /* PRELOADER */
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #0a0a0a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 1s ease-in-out;
-    }
-
-    #preloader svg {
-      width: 220px;
-      height: 60px;
-      animation: logo-draw 3s forwards; /* Animação de desenho da logo */
-    }
-
-    @keyframes logo-draw {
-      0% {
-        stroke-dashoffset: 500;
-      }
-      100% {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    body.loaded {
-      overflow: auto;
-    }
-
-    #preloader.fade-out {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    /* Estilos dos botões */
-    a.btn-primary, a.btn-secondary {
-      padding: 14px 32px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'Courier New', monospace;
-      transition: all 0.3s ease-in-out;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      cursor: pointer;
-      letter-spacing: 1px;
-      opacity: 0;
-      animation: fadeIn 0.5s forwards;
-    }
-
-    a.btn-primary {
-      background: #a020f0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
       color: #fff;
-      box-shadow: 0 0 20px rgba(160, 32, 240, 0.6);
+      scroll-behavior: smooth;
     }
 
-    a.btn-primary::before, a.btn-secondary::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: all 0.4s ease-in-out;
-      z-index: -1;
-    }
-
-    a.btn-primary:hover::before, a.btn-secondary:hover::before {
-      left: 100%;
-    }
-
-    a.btn-primary:hover {
-      background: #b430ff;
-      box-shadow: 0 0 25px rgba(180, 48, 255, 0.8);
-      transform: scale(1.05);
-    }
-
-    a.btn-secondary {
-      border: 2px solid #a020f0;
-      color: #a020f0;
-      background: transparent;
-      box-shadow: 0 0 12px rgba(160, 32, 240, 0.3);
-    }
-
-    a.btn-secondary:hover {
-      background: #a020f0;
-      color: #fff;
-      box-shadow: 0 0 25px rgba(160, 32, 240, 0.6);
-      transform: scale(1.05);
-    }
-
-    /* Animação de FadeIn para os botões */
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Estilos do cabeçalho */
     header {
-      background-color: #111;
-      padding: 20px 40px;
-      border-bottom: 2px solid #a020f0;
+      background: #141414;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #00ffd5;
     }
 
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      color: #a020f0;
-      font-size: 26px;
-    }
-
-    /* Estilos principais da página */
-    .main {
-      padding: 100px 20px;
-    }
-
-    h2 {
-      font-family: 'Courier New', monospace;
+    .logo {
       font-size: 2.5em;
-      color: #a020f0;
-      margin-bottom: 10px;
+      font-weight: bold;
+      color: #00ffd5;
+      text-shadow: 0 0 5px #00ffd5, 0 0 15px #00ffd5;
+      animation: pulse 2.5s infinite ease-in-out;
     }
 
-    p {
-      font-size: 1.2em;
-      color: #ccc;
-      margin-bottom: 40px;
+    nav {
+      margin-top: 10px;
     }
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #00ffd5;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #00ffd5;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #00ffd5, #00bfa5);
+      color: #000;
+      text-align: center;
+      border-radius: 12px;
+      padding: 100px 20px;
+      margin: 40px 0;
+    }
+
+    .btn {
+      background: #000;
+      color: #00ffd5;
+      padding: 15px 30px;
+      margin-top: 20px;
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00ffd5;
     }
 
     footer {
-      margin-top: 100px;
-      padding: 30px 0;
-      background-color: #111;
-      color: #777;
-      font-size: 0.9em;
+      background: #141414;
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid #00ffd5;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 5px #00ffd5, 0 0 15px #00ffd5; transform: scale(1); }
+      50% { text-shadow: 0 0 15px #00ffd5, 0 0 30px #00ffd5; transform: scale(1.05); }
+    }
+
+    @media (max-width: 600px) {
+      .logo { font-size: 2em; }
+      nav a { display: inline-block; margin: 10px 5px; }
+    }
   </style>
 </head>
 <body>
 
-<div id="preloader">
-  <svg id="flykc-logo" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
-    <text x="0" y="45" font-family="Orbitron, sans-serif" font-size="40" fill="none" stroke="#a020f0" stroke-width="2" stroke-dasharray="500" stroke-dashoffset="500">FLYKc</text>
-  </svg>
-</div>
+  <header>
+    <div class="logo">FLYKc</div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#produto">Produto</a>
+      <a href="#como-funciona">Como Funciona</a>
+      <a href="#personalize">Personalize</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>FLYKc</h1>
-</header>
+  <section class="hero" id="inicio">
+    <h1>Alta Performance, Personalizada</h1>
+    <p>Suplementos inteligentes para energia, foco e resultados reais.</p>
+    <a href="#personalize" class="btn">Garanta o seu</a>
+  </section>
 
-<div class="main">
-  <h2>Suplemento Inteligente</h2>
-  <p>Desperte sua melhor versão com foco, energia e performance sob medida.</p>
+  <section id="produto">
+    <h2>Nosso Produto</h2>
+    <p>O suplemento FLYKc é uma cápsula de energia inteligente, com cafeína, L-teanina, vitaminas do complexo B e compostos naturais. Sem açúcar, vegano e aprovado pela ANVISA.</p>
+  </section>
 
-  <div class="buttons">
-    <a href="produto.html" class="btn-primary">EXPERIMENTE</a>
-    <a href="como-funciona.html" class="btn-primary">VEJA COMO FUNCIONA</a>
-  </div>
+  <section id="como-funciona">
+    <h2>Como Funciona</h2>
+    <ol>
+      <li>Você escolhe seus objetivos e preferências</li>
+      <li>Nós formulamos sua combinação ideal</li>
+      <li>Você sente o resultado no dia a dia</li>
+    </ol>
+  </section>
 
-  <div style="margin-top: 40px;">
-    <a href="personalize.html" class="btn-secondary">Garanta com suas necessidades</a>
-  </div>
-</div>
+  <section id="personalize">
+    <h2>Personalize Seu Suplemento</h2>
+    <p>Quer foco, energia ou recuperação? Monte sua fórmula perfeita agora mesmo.</p>
+    <a href="#contato" class="btn">Fale com a gente</a>
+  </section>
 
-<footer>
-  © 2025 FLYKc. Todos os direitos reservados.
-</footer>
-
-<script>
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('preloader').classList.add('fade-out');
-      document.body.classList.add('loaded');
-    }, 500); // Delay de 0.5s para dar tempo ao preloader de aparecer
-  });
-</script>
+  <footer id="contato">
+    <p>Contato: contato@flykc.com.br</p>
+    <p>FLYKc © 2025</p>
+  </footer>
 
 </body>
 </html>
