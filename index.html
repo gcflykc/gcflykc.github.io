@@ -3,101 +3,206 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FLYKc - Energia Inteligente</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>FLYKc | IA aplicada à suplementação</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0e0e0e;
+      color: #ffffff;
+      scroll-behavior: smooth;
+    }
+
+    header, footer {
+      text-align: center;
+      background-color: #121212;
+      padding: 30px 20px;
+    }
+
+    .logo {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #00ffd5;
+      text-shadow: 0 0 10px #00ffd5, 0 0 20px #00ffd5, 0 0 30px #00ffd5;
+      animation: brilhoLogo 1.5s infinite alternate;
+    }
+
+    nav a {
+      color: #00ffd5;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #00ffd5;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: #00ffd5;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .highlight {
+      background: linear-gradient(to right, #00ffd5, #00bfa5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .demo-box {
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 5px;
+      background-color: #2a2a2a;
+      color: #fff;
+    }
+
+    .result {
+      margin-top: 20px;
+      color: #00ffd5;
+      font-style: italic;
+    }
+
+    @keyframes brilhoLogo {
+      0% {
+        text-shadow: 0 0 10px #00ffd5, 0 0 20px #00ffd5, 0 0 30px #00ffd5;
+      }
+      50% {
+        text-shadow: 0 0 20px #00ffd5, 0 0 30px #00ffd5, 0 0 40px #00ffd5;
+      }
+      100% {
+        text-shadow: 0 0 10px #00ffd5, 0 0 20px #00ffd5, 0 0 30px #00ffd5;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <div class="logo">FLYKc</div>
+    <p>Suplementação personalizada com inteligência artificial</p>
     <nav>
-      <a href="index.html" class="active">Início</a>
-      <a href="produto.html">Produto</a>
-      <a href="como-funciona.html">Como Funciona</a>
-      <a href="personalize.html">Personalize</a>
-      <a href="contato.html">Contato</a>
+      <a href="#proposta">Proposta</a>
+      <a href="#simulador">Demonstração</a>
+      <a href="#pitch">Pitch</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Alta Performance, <span class="typing-effect"></span></h1>
-    <p>Suplementos inteligentes para energia, foco e resultados reais.</p>
-    <button class="btn open-personalize-modal">Garanta o seu</button>
+  <section class="section" id="proposta">
+    <h2>Nosso Diferencial</h2>
+    <p>
+      A <span class="highlight">FLYKc</span> está transformando o mercado de suplementação com uma proposta inovadora: 
+      <strong>suplementos personalizados com base em dados reais</strong> como altura, peso, rotina de exercícios e objetivos.
+    </p>
+    <p>
+      Utilizando algoritmos de <span class="highlight">inteligência artificial</span>, criamos fórmulas sob medida que entregam resultados 
+      mais eficazes e criam uma experiência única para cada pessoa — desde atletas até iniciantes.
+    </p>
   </section>
 
-  <section class="features">
-    <div class="feature-card">
-      <h3>Energia Sustentável</h3>
-      <p>Sem picos de energia ou queda brusca</p>
-    </div>
-    <div class="feature-card">
-      <h3>Foco Intenso</h3>
-      <p>Concentração sem nervosismo</p>
-    </div>
-    <div class="feature-card">
-      <h3>Personalização</h3>
-      <p>Sua fórmula exclusiva</p>
+  <section class="section" id="simulador">
+    <h2>Demonstração da IA</h2>
+    <p>Veja como nossa IA personaliza uma fórmula:</p>
+
+    <div class="demo-box">
+      <label>Peso (kg):</label>
+      <input type="number" id="peso">
+
+      <label>Altura (cm):</label>
+      <input type="number" id="altura">
+
+      <label>Atividade:</label>
+      <select id="atividade">
+        <option value="leve">Leve</option>
+        <option value="moderada">Moderada</option>
+        <option value="intensa">Intensa</option>
+      </select>
+
+      <label>Objetivo:</label>
+      <select id="objetivo">
+        <option value="energia">Mais Energia</option>
+        <option value="foco">Foco e Concentração</option>
+        <option value="emagrecimento">Emagrecimento</option>
+      </select>
+
+      <button class="btn" onclick="gerarRecomendacao()">Gerar Fórmula</button>
+
+      <div class="result" id="resultado"></div>
     </div>
   </section>
 
-  <!-- Modal de Personalização -->
-  <div id="personalizeModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Personalize Seu FLYKc</h2>
-      <form id="personalizeForm">
-        <div class="form-group">
-          <label for="goal">Seu principal objetivo:</label>
-          <select id="goal" required>
-            <option value="">Selecione...</option>
-            <option value="energy">Energia e Disposição</option>
-            <option value="focus">Foco Mental</option>
-            <option value="recovery">Recuperação Muscular</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label>Intensidade:</label>
-          <div class="intensity-options">
-            <label><input type="radio" name="intensity" value="light" checked> Leve</label>
-            <label><input type="radio" name="intensity" value="medium"> Médio</label>
-            <label><input type="radio" name="intensity" value="strong"> Forte</label>
-          </div>
-        </div>
-        
-        <button type="submit" class="btn">Finalizar</button>
-      </form>
-    </div>
-  </div>
+  <section class="section" id="pitch">
+    <h2>Por que investir?</h2>
+    <ul>
+      <li>Mercado de suplementos cresce mais de 12% ao ano no Brasil</li>
+      <li>Alta margem de lucro com personalização e fidelização via IA</li>
+      <li>Modelo de assinatura com LTV elevado</li>
+      <li>Escalável para diferentes públicos (fitness, gamers, wellness)</li>
+    </ul>
+    <a href="#contato" class="btn">Quero saber mais</a>
+  </section>
 
-  <footer>
-    <button class="btn open-contact-modal">Fale Conosco</button>
+  <footer id="contato">
+    <h2>Contato</h2>
+    <p>Email: investidores@flykc.com.br</p>
+    <p>WhatsApp: (xx) xxxx-xxxx</p>
     <p>FLYKc © 2025</p>
   </footer>
 
-  <!-- Modal de Contato -->
-  <div id="contactModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Contato FLYKc</h2>
-      <form id="contactForm">
-        <div class="form-group">
-          <label for="name">Nome:</label>
-          <input type="text" id="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Mensagem:</label>
-          <textarea id="message" required></textarea>
-        </div>
-        <button type="submit" class="btn">Enviar</button>
-      </form>
-    </div>
-  </div>
+  <script>
+    function gerarRecomendacao() {
+      const peso = parseFloat(document.getElementById("peso").value);
+      const altura = parseFloat(document.getElementById("altura").value);
+      const atividade = document.getElementById("atividade").value;
+      const objetivo = document.getElementById("objetivo").value;
 
-  <script src="script.js"></script>
+      if (!peso || !altura) {
+        document.getElementById("resultado").innerText = "Preencha todos os campos.";
+        return;
+      }
+
+      let base = "Fórmula Base: Cafeína + Vitaminas B";
+      let extra = "";
+
+      if (objetivo === "energia") extra = " + Taurina + L-Carnitina";
+      else if (objetivo === "foco") extra = " + L-Teanina + Rhodiola";
+      else if (objetivo === "emagrecimento") extra = " + Chá Verde + Picolinato de Cromo";
+
+      let atividadeBonus = atividade === "intensa" ? " + Coenzima Q10" : "";
+
+      document.getElementById("resultado").innerText = base + extra + atividadeBonus;
+    }
+  </script>
+
 </body>
 </html>
