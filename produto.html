@@ -1,22 +1,22 @@
+
+<!-- produto.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FLYKc CAPS | Produto</title>
-
+  <title>FLYKc CAPS - Produto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: #0e0e0e;
       color: #ffffff;
-      scroll-behavior: smooth;
     }
 
     header, footer {
-      text-align: center;
       background-color: #121212;
+      text-align: center;
       padding: 30px 20px;
     }
 
@@ -24,125 +24,64 @@
       font-size: 2.5em;
       font-weight: bold;
       color: #00ffd5;
-      text-shadow: 0 0 10px #00ffd5, 0 0 20px #00ffd5, 0 0 30px #00ffd5;
-      animation: brilhoLogo 1.5s infinite alternate;
+      text-shadow: 0 0 10px #00ffd5, 0 0 20px #00ffd5;
     }
 
-    nav a {
-      color: #00ffd5;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .section {
-      padding: 60px 20px;
+    .container {
       max-width: 1000px;
       margin: auto;
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    h2 {
+    h1 {
       color: #00ffd5;
-      font-size: 2em;
-      margin-bottom: 20px;
+      font-size: 2.2em;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin: 20px 0;
+    }
+
+    .product-img {
+      width: 260px;
+      margin: 40px 0;
     }
 
     .btn {
-      background: #00ffd5;
+      background-color: #00ffd5;
       color: #000;
-      padding: 12px 24px;
-      border-radius: 8px;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 10px;
       text-decoration: none;
-      display: inline-block;
-      font-weight: bold;
-      margin-top: 20px;
+      transition: 0.3s;
     }
 
-    .highlight {
-      background: linear-gradient(to right, #00ffd5, #00bfa5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-    }
-
-    .demo-box {
-      background-color: #1c1c1c;
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      margin-top: 5px;
-      background-color: #2a2a2a;
-      color: #fff;
-    }
-
-    .result {
-      margin-top: 20px;
-      color: #00ffd5;
-      font-style: italic;
-    }
-
-    @keyframes brilhoLogo {
-      0% {
-        text-shadow: 0 0 10px #00ffd5, 0 0 20px #00ffd5, 0 0 30px #00ffd5;
-      }
-      50% {
-        text-shadow: 0 0 20px #00ffd5, 0 0 30px #00ffd5, 0 0 40px #00ffd5;
-      }
-      100% {
-        text-shadow: 0 0 10px #00ffd5, 0 0 20px #00ffd5, 0 0 30px #00ffd5;
-      }
+    .btn:hover {
+      background-color: #00c2a5;
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo">FLYKc</div>
+  </header>
 
-<header>
-  <h1>FLYKc</h1>
-</header>
+  <div class="container">
+    <h1>FLYKc CAPS - Energia e Foco</h1>
+    <img src="caminho/da/imagem.png" alt="FLYKc CAPS" class="product-img">
 
-<div class="container">
-  <h2 class="product-title">FLYKc CAPS</h2>
-  <p class="subtitle">Alta performance em cápsulas — Energia, foco e clareza mental.</p>
+    <p>O suplemento ideal para quem exige o máximo de performance mental e energia no dia a dia. Combinamos cafeína e taurina para entregar foco intenso, disposição e clareza mental — seja para treinar, estudar ou empreender.</p>
 
-  <div class="product-info">
-    <div class="product-image">
-      <img src="https://via.placeholder.com/400x500/000000/a020f0?text=FLYKc+CAPS" alt="FLYKc Produto">
-    </div>
+    <p>Fórmula eficaz, embalagem moderna, e um propósito ousado: ser o combustível da nova geração.</p>
 
-    <div class="product-details">
-      <h3>Benefícios:</h3>
-      <ul>
-        <li>Mais energia e disposição em minutos</li>
-        <li>Foco intenso e clareza mental sem agitação</li>
-        <li>Zero açúcar e sem crash no final do efeito</li>
-        <li>Ideal para gamers, atletas e produtividade</li>
-      </ul>
-
-      <h3>Composição:</h3>
-      <ul>
-        <li>Cafeína Anidra 200mg</li>
-        <li>L-Teanina 100mg</li>
-        <li>Vitaminas B6, B12 e Niacina</li>
-      </ul>
-
-      <a href="https://wa.me/5511999128663?text=QUERO%20GARANTIR!" class="btn-buy" target="_blank">Comprar Agora</a>
-    </div>
+    <a href="checkout.html" class="btn">Comprar Agora</a>
   </div>
 
-  <a class="back-btn" href="index.html">Voltar para o Início</a>
-</div>
-
+  <footer>
+    <p>&copy; 2025 FLYKc. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
